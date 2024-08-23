@@ -1,12 +1,12 @@
 ﻿@using Departman.Models
 @model List<Personel>
-
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "BirimDetay";
     Layout = "~/Views/Shared/_TestLayout.cshtml";
 }
 
-
+<br />
+<h2>@ViewBag.brm Birimi</h2>
 <br />
 <table class="table table-bordered">
     <tr>
@@ -14,9 +14,6 @@
         <th>AD</th>
         <th>SOYAD</th>
         <th>ŞEHİR</th>
-        <th>BİRİM</th>
-        <th>SİL</th>
-        <th>GÜNCELLE</th>
     </tr>
     @foreach (var x in Model)
     {
@@ -25,14 +22,8 @@
             <td>@x.Ad</td>
             <td>@x.Soyad</td>
             <td>@x.Sehir</td>
-            <td>@x.Birim.BirimAd</td>
-            <td><a href="/Personelim/PersonelSil/@x.PersonelID" class="btn btn-danger">Sil</a></td>
-            <td><a href="/Personelim/PersonelGetir/@x.PersonelID" class="btn btn-success">Güncelle</a></td>
         </tr>
     }
 
 </table>
-<a href="/Personelim/YeniPersonel" class="btn btn-primary">Yeni Personel Ekle</a>
-
-
 
